@@ -10,6 +10,7 @@ import './styles.css';
 interface PageHeaderProps {
     title: string; // Esse valor é obrigatório
     // title?: string => Esse valor não é obrigatório
+    description?: string;
 }
 
 // PageHeader é uma função componente do react; <Parâmetro>
@@ -26,6 +27,8 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
 
             <div className="header-content">
                 <strong>{props.title}</strong>
+
+                { props.description && <p>{props.description}</p> }
 
                 {props.children}
             </div>
