@@ -10,10 +10,11 @@ const app = express();
 // para um objeto do Javascript
 app.use(express.json());
 
-app.use(routes);
-
 // Permite que aplicações de diferentes endereços tenham acesso a esse api
 app.use(cors());
+
+app.use(routes);
+
 
 // Rota é o endereço que eu quero acessar. A rota seguida pelo método get() abaixo
 // é passada como primeiro parâmetro, e o que será executado é passado como segundo
