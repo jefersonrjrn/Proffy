@@ -3,6 +3,7 @@ import { View, ScrollView, Text, TextInput } from 'react-native';
 import { BorderlessButton, RectButton } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-community/async-storage';
+import { useFocusEffect } from '@react-navigation/native';
 
 import api from '../../services/api';
 
@@ -35,12 +36,18 @@ function TeacherList() {
     });
   }
 
+  useFocusEffect(// Vai executar toda vez que a tela entrar em foco
+    React.useCallback(() => {
+      loadFavorites();
+    }, [])
+  )
+
   function handleToggleFiltersVisible() {
     setIsFilterVisible(!isFilterVisible);
   }
 
   async function handleFiltersSubmit() {
-    
+
     loadFavorites();
 
     const response = await api.get('classes', {
