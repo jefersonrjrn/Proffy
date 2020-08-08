@@ -1,4 +1,7 @@
 # Proffy
+
+![](/web/assets/Proffy.png)
+
 Projeto de uma plataforma que permite alunos entrarem em contato com professores, desenvolvido durante a Next Level Week 2.
 
 ## Tecnologias usadas
